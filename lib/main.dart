@@ -1,7 +1,6 @@
 import 'package:cryto/Screens/main_activity.dart';
 import 'package:cryto/Styles/color.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
