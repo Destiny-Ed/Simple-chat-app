@@ -15,7 +15,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: AppBarTheme(color: white, elevation: 0),
+          appBarTheme: AppBarTheme(color: white, elevation: 0, centerTitle: false),
           scaffoldBackgroundColor: white,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
               selectedItemColor: black, unselectedItemColor: grey)),

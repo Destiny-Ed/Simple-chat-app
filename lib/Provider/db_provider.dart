@@ -2,7 +2,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {
-  /// I will be using the name of each user as the database table
+  /// I used the id of each user as the database name
   /// To avoid showing duplicate messages for different users
   Future<Database> createDatabase(String table) async {
     final database =
@@ -23,7 +23,7 @@ class DatabaseProvider {
           conflictAlgorithm: ConflictAlgorithm.replace);
       return 'Chat Sent';
     } on DatabaseException catch (e) {
-      print(e);
+      // print(e);
       return e.result.toString();
     }
   }
