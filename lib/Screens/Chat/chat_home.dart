@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:cryto/Model/chat_model.dart';
 import 'package:cryto/Model/stories_model.dart';
 import 'package:cryto/Screens/Chat/chat_details.dart';
@@ -81,7 +82,7 @@ class _ChatPageState extends State<ChatPage> {
 
                   ///Stories
                   Container(
-                    margin: const EdgeInsets.symmetric(vertical: 15),
+                    margin: const EdgeInsets.symmetric(vertical: 20),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -112,10 +113,16 @@ class _ChatPageState extends State<ChatPage> {
                               margin: const EdgeInsets.only(right: 15),
                               child: Column(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: whiteGrey,
-                                    backgroundImage: AssetImage(data.image!),
+                                  Badge(
+                                    badgeColor: Colors.green,
+                                    padding: const EdgeInsets.all(5),
+                                    position: BadgePosition.bottomEnd(
+                                        end: 0, bottom: 0),
+                                    child: CircleAvatar(
+                                      radius: 20,
+                                      backgroundColor: whiteGrey,
+                                      backgroundImage: AssetImage(data.image!),
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 5,

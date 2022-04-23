@@ -1,4 +1,7 @@
+import 'package:badges/badges.dart';
 import 'package:cryto/Screens/Chat/chat_home.dart';
+import 'package:cryto/Screens/People/people_page.dart';
+import 'package:cryto/Screens/Settings/settings.dart';
 import 'package:cryto/Styles/color.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +29,8 @@ class _MainActivityState extends State<MainActivity> {
   ///bottom nav pages
   List<Widget> bottomNavPages = [
     const ChatPage(),
-    const ChatPage(),
-    const ChatPage(),
+    const PeoplePage(),
+    const SettingsPage(),
   ];
 
   @override
@@ -49,7 +52,17 @@ class _MainActivityState extends State<MainActivity> {
                   color: pageIndex == 0 ? black : grey,
                 ),
                 label: ''),
-            const BottomNavigationBarItem(icon: Icon(Icons.group), label: ''),
+            BottomNavigationBarItem(
+                icon: Badge(
+                    badgeColor: blue,
+                    badgeContent: Text(
+                      '2',
+                      style: TextStyle(fontSize: 10, color: white),
+                    ),
+                    // padding: const EdgeInsets.all(5),
+                    position: BadgePosition.topEnd(end: -5, top: -8),
+                    child: const Icon(Icons.group)),
+                label: ''),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: ''),
           ]),

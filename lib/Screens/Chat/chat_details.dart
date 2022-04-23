@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:cryto/Model/chat_model.dart';
 import 'package:cryto/Provider/db_provider.dart';
 import 'package:cryto/Styles/color.dart';
@@ -44,10 +45,15 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                 contentPadding: const EdgeInsets.all(0),
                 leading: Hero(
                   tag: widget.data!.id!,
-                  child: CircleAvatar(
-                    backgroundColor: red,
-                    // radius: 15,
-                    backgroundImage: AssetImage(widget.data!.image!),
+                  child: Badge(
+                    badgeColor: Colors.green,
+                    padding: const EdgeInsets.all(5),
+                    position: BadgePosition.bottomEnd(end: 0, bottom: 0),
+                    child: CircleAvatar(
+                      backgroundColor: red,
+                      // radius: 15,
+                      backgroundImage: AssetImage(widget.data!.image!),
+                    ),
                   ),
                 ),
                 title: Text(
